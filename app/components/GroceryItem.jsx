@@ -4,8 +4,10 @@ module.exports = React.createClass({
     render: function() {
         return(
             <div>
-                hello world from jsx
+                <h4 className={this.props.item.purchased ? "strikethrough" : ""}>
+                    {this.props.item.name}
+                </h4>
             </div>
-        );
+        )
     }
 });
