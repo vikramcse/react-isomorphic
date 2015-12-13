@@ -1,0 +1,21 @@
+{
+  "name": "react-isomorphic",
+  "description": "A full stack react application using express and mongodb",
+  "main": "index.js",
+  "authors": [
+    "Vikram Jadhav"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.3"
+  }
+}
