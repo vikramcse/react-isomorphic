@@ -2,7 +2,18 @@ var React =	require('react'); // here comes useful browserify
 var dispatcher = require('./../dispatcher.js');
 
 function GroceryItemStore() {
-    var items = [];
+
+    var items = [{
+        name: "Ice Cream",
+        purchased: true
+    }, {
+        name: "pizza",
+        purchased: false
+    }, {
+        name: "vadapav",
+        purchased: false
+    }];
+
     var listeners = [];
 
     function getItems() {
@@ -12,6 +23,7 @@ function GroceryItemStore() {
     // this will keep all the listeners
     function onChange(listener) {
         listeners.push(listener);
+        console.log(listeners);
     }
 
     function triggerListeners() {
