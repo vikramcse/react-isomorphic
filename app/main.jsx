@@ -10,10 +10,14 @@ function render() {
     ReactDOM.render(<GroceryItemList items={initial}/>, document.getElementById('app'));
 }
 
+// 1.
+// Initially the listener is register to the store listeners
+// in the form of callback and the callback contains changed data
+// now lets go to store to see what will happen in onChange
 GroceryItemStore.onChange(function(items) {
     initial = items;
     render();
 });
 
-
+// 2 initial render happens
 render();

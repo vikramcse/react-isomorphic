@@ -20,23 +20,37 @@ function GroceryItemStore() {
         return items;
     }
 
-    // this will keep all the listeners
+    // 3.
+    // Here the listener is registered by pushing it to the list
     function onChange(listener) {
         listeners.push(listener);
         console.log(listeners);
     }
 
+    // 10.
+    // remember the listener added at step one
+    // pass new changed item to it
+    // and the render method is called with the new data
     function triggerListeners() {
         listeners.forEach(function(listener) {
             listener(items);
         });
     }
 
+    //9.
+    // The new item is added to the store
+    // then new need to trigger the listeners that change
+    // happened now time to re-render
     function addGroceryItem(item) {
         items.push(item);
         triggerListeners();
     }
 
+    // 4.
+    // Automatically the register function is called
+    // here we need to specify about the action and what to do
+    // when that action triggers
+    // lets go to register function in dispatcher
     dispatcher.register(function(event) {
         var split = event.type.split(":");
         if(split[0] === 'grocery-item') {

@@ -12,6 +12,11 @@ module.exports = React.createClass({
             input: this.refs.name.value
         });
     },
+    //6.
+    // Here the user has changed the item
+    // so the new action is added the to the ActionCreator
+    // having the payload i.e new data
+    // lets go to actionCreator
     addItem: function(e) {
         e.preventDefault();
         action.add({
