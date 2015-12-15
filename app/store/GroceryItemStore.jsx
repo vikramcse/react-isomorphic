@@ -46,6 +46,28 @@ function GroceryItemStore() {
         triggerListeners();
     }
 
+    function deleteGroceryItem(item) {
+        var index;
+        items.filter(function(_item, _index) {
+            if(_item.name == item.name) {
+                index = _index;
+            }
+        });
+
+        items.splice(index, 1);
+        triggerListeners();
+    }
+
+    function buyGroceryItem(item) {
+        item.purchased = true;
+        triggerListeners();
+    }
+
+    function unbuyGroceryItem(item) {
+        item.purchased = false;
+        triggerListeners();
+    }
+
     // 4.
     // Automatically the register function is called
     // here we need to specify about the action and what to do
@@ -57,6 +79,15 @@ function GroceryItemStore() {
             switch(split[1]) {
                 case 'add':
                     addGroceryItem(event.payload);
+                    break;
+                case 'delete':
+                    deleteGroceryItem(event.payload);
+                    break;
+                case 'buy':
+                    buyGroceryItem(event.payload);
+                    break;
+                case 'unbuy':
+                    unbuyGroceryItem(event.payload);
                     break;
             }
         }
