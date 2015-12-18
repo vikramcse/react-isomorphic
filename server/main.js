@@ -11,3 +11,5 @@ app.use(express.static(__dirname + './../.temp'));
 app.listen(port, function() {
    console.log("server is listening on " + port);
 });
+
+require('./routes/items.js')(app);

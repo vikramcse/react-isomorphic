@@ -3,17 +3,6 @@ var dispatcher = require('./../dispatcher.js');
 
 function GroceryItemStore() {
 
-    var items = [{
-        name: "Ice Cream",
-        purchased: true
-    }, {
-        name: "pizza",
-        purchased: false
-    }, {
-        name: "vadapav",
-        purchased: false
-    }];
-
     var listeners = [];
 
     function getItems() {
