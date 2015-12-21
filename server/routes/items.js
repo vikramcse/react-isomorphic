@@ -1,4 +1,5 @@
 module.exports = function(app) {
+    console.log('items.js file');
     var items = [{
         name: "Ice Cream",
         purchased: true
@@ -10,8 +11,8 @@ module.exports = function(app) {
         purchased: false
     }];
 
-    app.route('/api/items');
-    app.get('/', function(req, res) {
+    app.route('/api/items')
+    .get(function(req, res) {
         res.send(items);
     });
 };

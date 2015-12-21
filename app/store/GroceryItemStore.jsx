@@ -1,7 +1,15 @@
 var React =	require('react'); // here comes useful browserify
 var dispatcher = require('./../dispatcher.js');
+var helper = require('./../helpers/restHelper.js');
 
 function GroceryItemStore() {
+    var items = [];
+
+    helper.get('api/items')
+    .then(function(data) {
+        items = data;
+        triggerListeners();
+    });
 
     var listeners = [];
 
